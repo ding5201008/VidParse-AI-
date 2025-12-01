@@ -1,0 +1,5 @@
+{
+  "name": "VidParse AI - Web Analyzer",
+  "description": "A high-performance React web application for analyzing and extracting metadata from short video links using Gemini AI. This serves as a cross-platform alternative to a native Kotlin APK.",
+  "requestFramePermissions": []
+}
