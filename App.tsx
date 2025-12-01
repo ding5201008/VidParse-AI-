@@ -13,7 +13,7 @@ import {
   Copy, 
   CheckCircle,
   PlayCircle,
-  MessageCircle
+  Globe
 } from 'lucide-react';
 
 const App: React.FC = () => {
@@ -186,6 +186,27 @@ const App: React.FC = () => {
                     <p className="text-slate-400 leading-relaxed text-sm">
                       {result.summary}
                     </p>
+                    {result.sources && result.sources.length > 0 && (
+                      <div className="mt-4 pt-3 border-t border-slate-700/30">
+                        <h5 className="text-xs font-semibold text-slate-500 mb-2 flex items-center gap-1.5">
+                          <Globe className="w-3 h-3" /> Sources
+                        </h5>
+                        <ul className="space-y-1">
+                          {result.sources.map((source, i) => (
+                            <li key={i} className="text-xs truncate">
+                              <a 
+                                href={source.uri} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="text-indigo-400 hover:text-indigo-300 hover:underline transition-colors"
+                              >
+                                {source.title}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
 
                   <div className="flex flex-wrap gap-2 mb-8">
